@@ -146,7 +146,10 @@ function App() {
             w="full"
         >
             <Center>
-                <Heading as="h1">Simple CNN for Handwriting Prediction</Heading>
+                <Heading as="h1">
+    <Text display="block">Simple 97% accuracy CNN</Text>
+    <Text display="block">for Handwriting Prediction</Text>
+            </Heading>
             </Center>
         </Box>
 

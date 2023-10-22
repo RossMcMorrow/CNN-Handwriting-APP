@@ -59,11 +59,12 @@ function App() {
     useEffect(() => {
         handleShuffle();
 
-        async function loadModel() {
-            const loadedModel = await tf.loadLayersModel("/model/model.json");
-            setModel(loadedModel);
-            console.log("Model loaded");
-        }
+       async function loadModel() {
+    const modelPath = `${process.env.PUBLIC_URL}/model/model.json`;
+    const loadedModel = await tf.loadLayersModel(modelPath);
+    setModel(loadedModel);
+    console.log("Model loaded from:", modelPath);
+}
 
         loadModel();
     }, []);

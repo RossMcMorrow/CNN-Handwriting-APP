@@ -95,7 +95,7 @@ function App() {
         }
 
         const imgElement = document.createElement('img');
-        imgElement.src = `/${selectedImage}`;
+        imgElement.src = `${process.env.PUBLIC_URL}/${selectedImage}`;
         console.log("Image element created");
 
         await new Promise((resolve) => {
@@ -122,8 +122,8 @@ function App() {
 
     };
 
-    const topPredictions = predictions
-        .map((value, index) => ({value, index}))
+     const topPredictions = predictions
+        .map((value, index) => ({ value, index }))
         .sort((a, b) => b.value - a.value)
         .slice(0, 1);
 
@@ -149,23 +149,23 @@ function App() {
             </Center>
         </Box>
 
-          <Center w="full">
-        <SimpleGrid columns={gridColumns} spacing={10}>
-            {displayedImages.map((img, index) => (
-                <Box key={index} boxSize={imageSize}>
-                    <Image
-                        src={`/${img}`}
-                        alt={`Option ${index + 1}`}
-                        onClick={() => handleImageClick(img)}
-                        cursor="pointer"
-                        borderRadius={'15px'}
-                        boxSize={imageSize}
-                        objectFit="cover"
-                    />
-                </Box>
-            ))}
-        </SimpleGrid>
-    </Center>
+             <Center w="full">
+                    <SimpleGrid columns={gridColumns} spacing={10}>
+                        {displayedImages.map((img, index) => (
+                            <Box key={index} boxSize={imageSize}>
+                                <Image
+                                    src={`${process.env.PUBLIC_URL}/${img}`}
+                                    alt={`Option ${index + 1}`}
+                                    onClick={() => handleImageClick(img)}
+                                    cursor="pointer"
+                                    borderRadius={'15px'}
+                                    boxSize={imageSize}
+                                    objectFit="cover"
+                                />
+                            </Box>
+                        ))}
+                    </SimpleGrid>
+                </Center>
 
         <Center>
             <Button colorScheme="teal" onClick={handleShuffle}>
@@ -173,28 +173,26 @@ function App() {
             </Button>
         </Center>
 
-          <Center mt={5}>
-        <Box
-
-        >
-            {selectedImage ? (
-                <Image
-                    src={`/${selectedImage}`}
-                    alt="Selected Option"
-                    boxSize="75px"
-                    objectFit="contain"
-                    borderRadius={'15px'}
-                />
-            ) : (
-                <Image
-                    src="/download.png" // Default React logo as placeholder
-                    alt="Placeholder"
-                    boxSize="73px"
-                    borderRadius={'15px'}
-                />
-            )}
-        </Box>
-    </Center>
+           <Center mt={5}>
+                    <Box>
+                        {selectedImage ? (
+                            <Image
+                                src={`${process.env.PUBLIC_URL}/${selectedImage}`}
+                                alt="Selected Option"
+                                boxSize="75px"
+                                objectFit="contain"
+                                borderRadius={'15px'}
+                            />
+                        ) : (
+                            <Image
+                                src={`${process.env.PUBLIC_URL}/download.png`}
+                                alt="Placeholder"
+                                boxSize="73px"
+                                borderRadius={'15px'}
+                            />
+                        )}
+                    </Box>
+                </Center>
 
         <Center>
             <Button colorScheme="teal" onClick={handlePredict}>

@@ -95,7 +95,7 @@ function App() {
         }
 
         const imgElement = document.createElement('img');
-        imgElement.src = `/model/${selectedImage}`;
+        imgElement.src = `/${selectedImage}`;
         console.log("Image element created");
 
         await new Promise((resolve) => {
@@ -154,7 +154,7 @@ function App() {
             {displayedImages.map((img, index) => (
                 <Box key={index} boxSize={imageSize}>
                     <Image
-                        src={`/model/${img}`}
+                        src={`/${img}`}
                         alt={`Option ${index + 1}`}
                         onClick={() => handleImageClick(img)}
                         cursor="pointer"
@@ -179,7 +179,7 @@ function App() {
         >
             {selectedImage ? (
                 <Image
-                    src={`/model/${selectedImage}`}
+                    src={`/${selectedImage}`}
                     alt="Selected Option"
                     boxSize="75px"
                     objectFit="contain"

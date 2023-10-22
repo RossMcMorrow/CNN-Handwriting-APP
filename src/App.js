@@ -145,10 +145,11 @@ function App() {
             borderRadius="md"
             w="full"
         >
-            <Center>
-                <Heading as="h1">
-    <Text display="block">Simple 97% accuracy CNN</Text>
-    <Text display="block">for Handwriting Prediction</Text>
+
+             <Center>
+                 <Heading as="h1">
+    <Text display="block">Simple CNN - 97% Accuracy </Text>
+    <Text display="block">For Handwriting Prediction</Text>
             </Heading>
             </Center>
         </Box>

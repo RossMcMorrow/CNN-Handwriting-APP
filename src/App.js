@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Text, seBreakpointValue, VStack, StackDivider, Heading, Box, Image, SimpleGrid, Center, Button, Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
+import {  useBreakpointValue, VStack, StackDivider, Heading, Box, Image, SimpleGrid, Center, Button, Table, Thead, Tbody, Tr, Th, Td,
+    Text} from '@chakra-ui/react';
 import * as tf from '@tensorflow/tfjs';
 
 function App() {

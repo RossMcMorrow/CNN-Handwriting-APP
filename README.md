@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Intro
 
 This project created a simple CNN and trained it on the mnist dataset in Keras. 
